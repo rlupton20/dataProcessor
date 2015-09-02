@@ -71,17 +71,5 @@ def dimPlot(dataplot, par):
     values = extractValues(dataplot, par)
     return (max(values) - min(values))
 
-def nearNeighbours(dataplot, pt, tol1, tol2):
-        epsilon1 = dimPlot(dataplot, 0)/tol1
-        epsilon2 = dimPlot(dataplot, 1)/tol2
-        numNeigh = lambda p: len([point for point in dataplot if (abs(p[0] - point[0]) < epsilon1) and (abs(p[1] - point[1]) < epsilon2)])-1
-        return numNeigh(pt)
-
-def nearNeighboursPlot(dataplot, tol1, tol2):
-        plot = []
-        for point in dataplot:
-            plot = plot + [[point[0], nearNeighbours(dataplot, point, tol1, tol1)]]
-        return dataPlot(plot)
-
 def takeInitial(dataplot, cond):
     return list(itertools.takewhile(cond, dataplot))
