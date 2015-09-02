@@ -1,2 +1,8 @@
 # Ignore the __pycache__ folders
 __pycache__/
+
+# If editing with a text editor, in particular emacs
+# one gets alot of files ending in ~. Ignore them.
+*~
+# Emacs is also guilty of generating files beginning and ending #
+*#
